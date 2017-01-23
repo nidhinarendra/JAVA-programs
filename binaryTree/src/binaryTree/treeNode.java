@@ -36,7 +36,29 @@ class treeNode{
 		}
 	}
 
+	public static void preOrder(treeNode root) {
+		if (root != null) {
+			System.out.print(root.data + " ");
+			preOrder(root.leftchild);
+			preOrder(root.rightchild);
+		}
+	}
+	
+	public static void postOrder(treeNode root) {
+		if (root != null) {
+			postOrder(root.leftchild);
+			postOrder(root.rightchild);
+			System.out.print(root.data + " ");
+		}
+	}
 
+	public static void inOrder(treeNode root) {
+		if (root != null) {
+			inOrder(root.leftchild);
+			System.out.print(root.data + " ");
+			inOrder(root.rightchild);
+		}
+	}
 	public static treeNode insert(int x, treeNode head){
 
 		treeNode newNode = new treeNode(x);
@@ -67,6 +89,9 @@ class treeNode{
 			head = insert(7, head);
 			//System.out.println("The tree has values" + first.data + " and "+ second.data + " and " + third.data + " and " + forth.data + " and " + fifth.data);
 			searchTree(head, 6);
+			preOrder(head);
+			postOrder(head);
+			inOrder(head);
 		}
 	}
 
