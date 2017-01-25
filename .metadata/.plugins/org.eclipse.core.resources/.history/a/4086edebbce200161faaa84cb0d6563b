@@ -162,7 +162,7 @@ class treeNode{
 			}
 			else{
 				treeNode temp = stack.pop();
-				System.out.print(temp.data + " ");
+				System.out.print(temp.data);
 				current = temp.rightchild;
 			}
 		}

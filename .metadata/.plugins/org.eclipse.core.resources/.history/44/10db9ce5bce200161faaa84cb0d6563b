@@ -147,25 +147,7 @@ class treeNode{
 		while(!s2.isEmpty()){
 			System.out.print(s2.pop().data + " ");
 		}
-	}
-	
-	public static void inOrderIter(treeNode root) {
-		if(root == null)
-			return;
-		
-		Stack<treeNode> stack = new Stack<treeNode>();
-		treeNode current = root;
-		while(!stack.isEmpty() || current!=null){
-			if(current!=null){
-				stack.push(current);
-				current = current.leftchild;
-			}
-			else{
-				treeNode temp = stack.pop();
-				System.out.print(temp.data + " ");
-				current = temp.rightchild;
-			}
-		}
+
 	}
 
 	public static void main(String[] args) {
@@ -192,10 +174,9 @@ class treeNode{
 		preOrderIter(head);
 		System.out.println("\nPost order Iteration using 1 stack");
 		postOrderIter1stack(head);
-		System.out.println("\nPost order Iteration using 2 stacks");
+		System.out.println("\nPost order Iteration using 2 stack");
 		postOrderIter2stack(head);
 		System.out.println("\nIn order Iteration");
-		inOrderIter(head);
 	}
 }
 
