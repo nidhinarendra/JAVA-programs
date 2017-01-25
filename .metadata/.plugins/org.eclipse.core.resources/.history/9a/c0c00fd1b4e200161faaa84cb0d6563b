@@ -95,7 +95,7 @@ class treeNode{
 		}
 	}
 
-	public static void postOrderIter1stack(treeNode root) {
+	public static void postOrderIter(treeNode root) {
 		if(root==null)
 			return;
 
@@ -110,44 +110,23 @@ class treeNode{
 				current = current.leftchild;
 				continue;
 			}
-
+			
 			if(stack.isEmpty())
 				return;
-
+			
 			current = stack.pop();
-
+			
 			if(current.rightchild!=null && !stack.isEmpty() && current.rightchild == stack.peek() ){
 				stack.pop();
 				stack.push(current);
 				current = current.rightchild;
-
+				
 			}
 			else{
 				System.out.print(current.data + " ");
 				current = null;
 			}
 		}
-	}
-
-	public static void postOrderIter2stack(treeNode root) {
-		Stack<treeNode> s1 = new Stack<treeNode>();
-		Stack<treeNode> s2 = new Stack<treeNode>();
-		treeNode current = root;
-		s1.push(current);
-		while(!s1.isEmpty()){
-			current = s1.pop();
-			s2.push(current);
-			if(current.leftchild!= null){
-				s1.push(current.leftchild);
-			}
-			if(current.rightchild!=null){
-				s1.push(current.rightchild);
-			}
-		}
-		while(!s2.isEmpty()){
-			System.out.print(s2.pop().data + " ");
-		}
-
 	}
 
 	public static void main(String[] args) {
@@ -172,11 +151,9 @@ class treeNode{
 		inOrderRec(head);
 		System.out.println("\nPre order Iteration");
 		preOrderIter(head);
-		System.out.println("\nPost order Iteration using 1 stack");
-		postOrderIter1stack(head);
-		System.out.println("\nPost order Iteration using 2 stack");
-		postOrderIter2stack(head);
-		System.out.println("\nIn order Iteration");
+		System.out.println("\nPost order Iteration");
+		postOrderIter(head);
+
 	}
 }
 

@@ -145,7 +145,7 @@ class treeNode{
 			}
 		}
 		while(!s2.isEmpty()){
-			System.out.print(s2.pop().data + " ");
+			System.out.print(s2.pop().data);
 		}
 
 	}
