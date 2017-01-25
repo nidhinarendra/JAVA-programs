@@ -116,14 +116,14 @@ class treeNode{
 			
 			current = stack.pop();
 			
-			if(current.rightchild!=null && !stack.isEmpty() && current.rightchild == stack.peek() ){
+			if(current.rightchild!=null && current.rightchild == stack.peek() && !stack.isEmpty() ){
 				stack.pop();
 				stack.push(current);
 				current = current.rightchild;
 				
 			}
 			else{
-				System.out.print(current.data + " ");
+				System.out.print(current);
 				current = null;
 			}
 		}
@@ -152,7 +152,6 @@ class treeNode{
 		System.out.println("\nPre order Iteration");
 		preOrderIter(head);
 		System.out.println("\nPost order Iteration");
-		postOrderIter(head);
 
 	}
 }

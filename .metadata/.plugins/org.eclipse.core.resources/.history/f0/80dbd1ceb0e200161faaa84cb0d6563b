@@ -132,14 +132,14 @@ class treeNode{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		treeNode head = null;
-		head = insert(10, head);
-		head = insert(20, head);
-		head = insert(8, head);
-		head = insert(6, head);
-		head = insert(7, head);
-		head = insert(30, head);
-		head = insert(18, head);
-		head = insert(5,head);
+//		head = insert(10, head);
+//		head = insert(20, head);
+//		head = insert(8, head);
+//		head = insert(6, head);
+//		head = insert(7, head);
+//		head = insert(30, head);
+//		head = insert(18, head);
+//		head = insert(5,head);
 
 		searchTree(head, 6);
 

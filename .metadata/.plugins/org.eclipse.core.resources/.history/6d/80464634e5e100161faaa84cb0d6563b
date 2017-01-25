@@ -83,63 +83,33 @@ class treeNode{
 
 		stack.push(root);
 		while(!stack.empty()){
-			treeNode tempRoot = stack.pop();
-			System.out.print(tempRoot.data + " ");
-
-			if (tempRoot.rightchild!=null){
-				stack.push(tempRoot.rightchild);
+			treeNode rootPrint = stack.pop();
+			System.out.print(rootPrint.data + " ");
+			
+			if (rootPrint.rightchild!=null){
+				stack.push(rootPrint.rightchild);
 			}
-			if(tempRoot.leftchild!=null){
-				stack.push(tempRoot.leftchild);
+			if(rootPrint.leftchild!=null){
+				stack.push(rootPrint.leftchild);
 			}
+		
+			
 		}
 	}
 
-	public static void postOrderIter(treeNode root) {
-		if(root==null)
-			return;
 
-		Stack<treeNode> stack = new Stack<treeNode>();
-		treeNode current = root;
-		while(true){
-			if(current!=null){
-				if(current.rightchild!=null){
-					stack.push(current.rightchild);
-				}
-				stack.push(current);
-				current = current.leftchild;
-				continue;
-			}
-			
-			if(stack.isEmpty())
-				return;
-			
-			current = stack.pop();
-			
-			if(current.rightchild!=null && !stack.isEmpty() && current.rightchild == stack.peek() ){
-				stack.pop();
-				stack.push(current);
-				current = current.rightchild;
-				
-			}
-			else{
-				System.out.print(current.data + " ");
-				current = null;
-			}
-		}
-	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		treeNode head = null;
-		head = insert(10, head);
-		head = insert(20, head);
-		head = insert(8, head);
-		head = insert(6, head);
-		head = insert(7, head);
-		head = insert(30, head);
-		head = insert(18, head);
-		head = insert(5,head);
+		insert(10, head);
+		insert(20, head);
+		insert(8, head);
+		insert(6, head);
+		insert(7, head);
+		insert(30, head);
+		insert(18, head);
+		insert(5,head);
 
 		searchTree(head, 6);
 
@@ -151,9 +121,7 @@ class treeNode{
 		inOrderRec(head);
 		System.out.println("\nPre order Iteration");
 		preOrderIter(head);
-		System.out.println("\nPost order Iteration");
-		postOrderIter(head);
-
+		
 	}
 }
 

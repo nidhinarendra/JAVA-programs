@@ -85,7 +85,7 @@ class treeNode{
 		while(!stack.empty()){
 			treeNode tempRoot = stack.pop();
 			System.out.print(tempRoot.data + " ");
-
+			
 			if (tempRoot.rightchild!=null){
 				stack.push(tempRoot.rightchild);
 			}
@@ -98,35 +98,9 @@ class treeNode{
 	public static void postOrderIter(treeNode root) {
 		if(root==null)
 			return;
-
-		Stack<treeNode> stack = new Stack<treeNode>();
-		treeNode current = root;
-		while(true){
-			if(current!=null){
-				if(current.rightchild!=null){
-					stack.push(current.rightchild);
-				}
-				stack.push(current);
-				current = current.leftchild;
-				continue;
-			}
-			
-			if(stack.isEmpty())
-				return;
-			
-			current = stack.pop();
-			
-			if(current.rightchild!=null && !stack.isEmpty() && current.rightchild == stack.peek() ){
-				stack.pop();
-				stack.push(current);
-				current = current.rightchild;
-				
-			}
-			else{
-				System.out.print(current.data + " ");
-				current = null;
-			}
-		}
+		
+		Stack<treeNode> stack = Stack<treeNode>();
+		
 	}
 
 	public static void main(String[] args) {
@@ -152,8 +126,7 @@ class treeNode{
 		System.out.println("\nPre order Iteration");
 		preOrderIter(head);
 		System.out.println("\nPost order Iteration");
-		postOrderIter(head);
-
+		
 	}
 }
 
