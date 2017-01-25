@@ -148,11 +148,11 @@ class treeNode{
 			System.out.print(s2.pop().data + " ");
 		}
 	}
-
+	
 	public static void inOrderIter(treeNode root) {
 		if(root == null)
 			return;
-
+		
 		Stack<treeNode> stack = new Stack<treeNode>();
 		treeNode current = root;
 		while(!stack.isEmpty() || current!=null){
@@ -168,21 +168,21 @@ class treeNode{
 		}
 	}
 
-	public static boolean isBST(treeNode root){
-		return isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
-	}
-
-	private static boolean isBST(treeNode root, int min, int max){
-		if(root == null){
-			return true;
-		}
-		if(root.data <= min || root.data > max){
-			return false;
-		}
-		return isBST(root.leftchild, min, root.data) && isBST(root.rightchild, root.data, max);
-	}
-
-
+//	public static boolean isBST(treeNode root){
+//        return isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+//    }
+    
+    private static boolean isBST(treeNode root, int min, int max){
+        if(root == null){
+            return true;
+        }
+        if(root.data <= min || root.data > max){
+            return false;
+        }
+        return isBST(root.leftchild, min, root.data) && isBST(root.rightchild, root.data, max);
+    }
+    
+    
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		treeNode head = null;
@@ -211,10 +211,10 @@ class treeNode{
 		postOrderIter2stack(head);
 		System.out.println("\nIn order Iteration");
 		inOrderIter(head);
-
-		boolean isBST = isBST(head);
+		
+		boolean isBST = isBST(head,0,0);
 		if(isBST == true){
-			System.out.println("\nThe given tree is a binary serach tree");
+		System.out.println("\nThe given tree is a binary serach tree");
 		}
 		else{
 			System.out.println("\nThe given tree is not a binary serach tree");
