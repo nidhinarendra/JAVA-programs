@@ -4,8 +4,6 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-import javax.naming.SizeLimitExceededException;
-
 
 class treeNode{
 	public treeNode leftchild;
@@ -76,37 +74,6 @@ class treeNode{
 			System.out.print(root.data + " ");
 			inOrderRec(root.rightchild);
 		}
-	}
-
-	public static void inOrderToStore(treeNode root, Vector vector) {
-		if (root != null) {
-			inOrderToStore(root.leftchild, vector);
-			vector.add(root);
-			inOrderToStore(root.rightchild, vector);
-		}
-	}
-
-	public static treeNode buildBalancedTree(treeNode root){
-		Vector<treeNode> vector = new Vector<treeNode>();
-		if(root ==null)
-			return root;
-
-		inOrderToStore(root, vector);
-
-		int sizeOfVector = vector.size();
-		return createBalancedTree(vector, 0, sizeOfVector-1);
-	}
-
-	public static treeNode createBalancedTree(Vector<treeNode> vector, int min, int max){
-		if(min>max)
-			return null;
-		int midPoint = (min+max)/2;
-		treeNode node = vector.get(midPoint);
-
-		node.leftchild = createBalancedTree(vector, min, midPoint-1);
-		node.rightchild = createBalancedTree(vector, midPoint+1, max);
-
-		return node;
 	}
 
 	public static void preOrderIter(treeNode root){
@@ -226,7 +193,7 @@ class treeNode{
 		head = insert(7, head);
 		head = insert(30, head);
 		head = insert(18, head);
-		head = insert(5, head);
+		head = insert(5,head);
 
 		searchTree(head, 6);
 
@@ -244,9 +211,6 @@ class treeNode{
 		postOrderIter2stack(head);
 		System.out.println("\nIn order Iteration");
 		inOrderIter(head);
-		System.out.println("\nLevel order traversal using queues");
-
-
 
 		boolean isBST = isBST(head);
 		if(isBST == true){
@@ -255,10 +219,6 @@ class treeNode{
 		else{
 			System.out.println("\nThe given tree is not a binary serach tree");
 		}
-
-		treeNode balancedTree = buildBalancedTree(head);
-		System.out.println("Pre order Recursion of a balanced tree is");
-		preOrderRec(balancedTree);
 	}
 }
 

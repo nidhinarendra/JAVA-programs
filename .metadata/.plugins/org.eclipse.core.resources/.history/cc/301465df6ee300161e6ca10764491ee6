@@ -258,7 +258,7 @@ class treeNode{
 
 		treeNode balancedTree = buildBalancedTree(head);
 		System.out.println("Pre order Recursion of a balanced tree is");
-		preOrderRec(balancedTree);
+		preOrderRec(head);
 	}
 }
 
