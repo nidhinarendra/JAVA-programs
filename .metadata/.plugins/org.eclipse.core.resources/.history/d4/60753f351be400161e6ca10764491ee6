@@ -1,0 +1,52 @@
+/*
+ * URLi : Write a method to replace all spaces in a string with '%20  
+ * You may assume that the string has suffcient space at the end to hold the additional characters, 
+ * and that you are given the "true" length of the string. 
+ * (Note: if implementing in Java, please use a character array so that you can perform this operation in place.)
+ */
+public class URLify {
+
+	public static char[] removeSpaces(char[] str, int trueLength){
+		int countSpace = 0;
+		for(int i= 0; i< trueLength; i++){
+			if(str[i] == ' '){
+				countSpace++;
+			}
+		}
+		System.out.println("The space count in the string given is: " + countSpace);
+		int replaceIndex = trueLength + (countSpace * 2);
+		System.out.println("The additional space required is: " + (countSpace*2) +
+				" The total space required is: " + replaceIndex);
+		
+		if(trueLength < replaceIndex){
+			str[trueLength] = '\0';
+		}
+		
+		for(int i = trueLength-1; i>=0; i--){
+			if(str[i] == ' '){
+				str[replaceIndex -1] = '0';
+				str[replaceIndex -2] = '2';
+				str[replaceIndex -3] = '%';
+				replaceIndex = replaceIndex-3;
+			}
+			else{
+				str[replaceIndex-1] = str[i];
+				replaceIndex--;
+			}
+		}
+		
+		return str;
+	}
+
+	public static void main(String[] args) {
+		String str = "      N I D H I           "; //example input
+		/*
+		 * A char[] is the one which helps in dynamically growing and shrinking the size
+		 * of the array and hence char[] is used. Also because its mentioned in the problem.
+		 */
+		char[] givenStr = str.toCharArray();  
+		char[] newStr = removeSpaces(givenStr, 9);
+		System.out.println(newStr);
+	}
+
+}

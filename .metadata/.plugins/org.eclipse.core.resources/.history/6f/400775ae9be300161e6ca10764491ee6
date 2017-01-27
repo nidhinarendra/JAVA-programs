@@ -1,0 +1,16 @@
+
+public class URLify {
+
+	public static String removeSpaces(String str){
+		int length = str.length();
+	System.out.print(str.indexOf(3));
+		return str;
+	}
+	
+	public static void main(String[] args) {
+		String str = "Mr John Smith";
+		String newStr = removeSpaces(str);
+		System.out.println(newStr);
+	}
+
+}

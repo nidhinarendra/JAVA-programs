@@ -1,0 +1,25 @@
+
+public class URLify {
+
+	public static char[] removeSpaces(char[] str, int trueLength){
+		int countSpace = 0;
+		for(int i= 0; i< trueLength; i++){
+			if(str[i] == ' '){
+				countSpace++;
+			}
+		}
+		System.out.println("The space count in the string given is: " + countSpace);
+		int replaceIndex = trueLength + (countSpace * 2);
+		System.out.println("The additional space required is: " + (countSpace*2) + "The total space required is: " + replaceIndex);
+		
+		return str;
+	}
+
+	public static void main(String[] args) {
+		String str = "MR JOHN SMITH               ";
+		char[] givenStr = str.toCharArray();
+		char[] newStr = removeSpaces(givenStr, 13);
+		System.out.println(newStr);
+	}
+
+}
