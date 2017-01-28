@@ -27,7 +27,7 @@ public class checkPermutation {
 
 	public static void main(String[] args) {
 		String a = "abcd";
-		String b = "bcda";
+		String b = "cdabhh";
 
 		boolean result = isSimilar(a, b);
 		System.out.println(result);
