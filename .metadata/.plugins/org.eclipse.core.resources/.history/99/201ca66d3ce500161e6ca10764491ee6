@@ -1,0 +1,13 @@
+import java.util.Arrays;
+public class abc {
+
+	public static void main(String[] args){
+		int arr[] = {1,4,2,7,4,9,14,86,3};
+		Arrays.sort(arr);
+		
+		for (int number : arr) {
+			   System.out.println(number);
+			   }
+	}
+
+}

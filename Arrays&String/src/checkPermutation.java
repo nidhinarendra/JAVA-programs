@@ -1,0 +1,37 @@
+
+public class checkPermutation {
+
+	public static boolean isSimilar(String a, String b){
+		if(a.length() != b.length()){
+			return false;
+		}
+		else{
+			int[] intArray = new int[128]; //assuming that the string contains only ascii characters
+			
+			char[] aChar = a.toCharArray();
+			for(char c: aChar){
+				intArray[c]++;
+			}
+			
+			for(int i=0; i<b.length(); i++){
+				int c = (int) b.charAt(i);
+				intArray[c]--;
+				if(c != 0){
+					return false;
+				}
+			}
+			return true;
+		}
+	
+	}
+
+	public static void main(String[] args) {
+		String a = "abcd";
+		String b = "efgh";
+
+		boolean result = isSimilar(a, b);
+		System.out.println(result);
+
+	}
+
+}

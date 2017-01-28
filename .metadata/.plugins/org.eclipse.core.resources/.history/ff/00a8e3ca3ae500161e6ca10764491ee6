@@ -1,0 +1,12 @@
+
+import java.util.Arrays;
+
+public class isUnique {
+
+	
+	public static void main(){
+		int arr[] = {1,4,2,7,4,9,14,86,3};
+		Arrays.sort(arr);
+		System.out.println(arr);
+	}
+}
