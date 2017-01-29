@@ -9,7 +9,7 @@ public class oneEditAway {
 		boolean result;
 		int str1len = first.length();
 		int str2len = second.length();
-		if(str1len == str2len){ 
+		if(str1len == str2len){
 			result = editReplace(first, second);
 		}
 		else if(str1len > str2len){
@@ -38,28 +38,21 @@ public class oneEditAway {
 	}
 
 	public static boolean editDelIns(String first, String second){
-		int count = 0;
 		if(first.length() - second.length() > 1){
 			return false;
 		}
 		
 		for(int i = 0; i < first.length() - 1; i++ ){
-			if(first.charAt(i) == second.charAt(i)){
-				continue;
-			}
-			else{
-				count++;
-				if(count > 1){
-					return false;
-				}
-			}
+			
 		}
+		
+
 		return true;
 	}
 
 	public static void main(String[] args) {
-		String first = "Nidhi";
-		String second = "Nidho";
+		String first = "ABCD";
+		String second = "ABEE";
 		boolean result = isOneEdit(first, second);
 		System.out.println(result);
 

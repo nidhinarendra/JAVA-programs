@@ -9,7 +9,7 @@ public class oneEditAway {
 		boolean result;
 		int str1len = first.length();
 		int str2len = second.length();
-		if(str1len == str2len){ 
+		if(str1len == str2len){
 			result = editReplace(first, second);
 		}
 		else if(str1len > str2len){
@@ -58,8 +58,8 @@ public class oneEditAway {
 	}
 
 	public static void main(String[] args) {
-		String first = "Nidhi";
-		String second = "Nidho";
+		String first = "ABCD";
+		String second = "AB";
 		boolean result = isOneEdit(first, second);
 		System.out.println(result);
 
