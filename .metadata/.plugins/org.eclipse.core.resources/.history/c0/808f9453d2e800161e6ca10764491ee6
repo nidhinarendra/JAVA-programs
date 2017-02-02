@@ -1,0 +1,37 @@
+
+public class stringRotation {
+
+	public static boolean isSubString(String str1, String str2){
+		if(str1.contains(str2)){
+			return true;
+		}
+		else{
+		return false;
+		}
+	}
+	public static boolean isRotate(String str1, String str2){
+		boolean result;
+		if(str1.length()!=str2.length()){
+			return false;
+		}
+		else{
+			String newstr = str1 + str1;
+			result = isSubString(newstr, str2);
+			if (result == true){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		boolean result;
+		String str1 = "apple";
+		String str2 = "";
+		result = isRotate(str1, str2);
+		System.out.println(result);
+	}
+
+}
