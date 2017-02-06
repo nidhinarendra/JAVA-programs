@@ -1,0 +1,62 @@
+package linkedList;
+import java.awt.List;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.LinkedList;
+import java.util.ListIterator;
+
+public class deleteDuplicate {
+public class Node{
+	Node data;
+	Node next;
+	
+	public Node(){
+		this.data = null;
+		this.next = null;
+	}
+}
+	public static LinkedList<Integer> deleteDup(LinkedList<Integer> list) {
+		HashSet<Integer> hashSet = new HashSet<>();
+		hashSet.addAll(list);
+		list.clear();
+		list.addAll(hashSet);
+		return list;
+	}
+	
+	public static LinkedList<Integer> deleteDup2(LinkedList<Integer> list) {
+		HashSet<Integer> hashset = new HashSet<>();
+		LinkedList<Integer> previous = null;
+		ListIterator<Integer> listIterator = list.listIterator();
+		while(listIterator.hasNext()){
+			Integer temp = listIterator.next();
+			if(hashset.contains(listIterator.next()))
+			{
+				list.removeFirstOccurrence(temp);
+				
+			}
+			else{
+				hashset.add(temp);
+			}
+				
+		}
+		return list;
+	}
+
+	public static void main(String[] args) {
+		LinkedList<Integer> linkList = new LinkedList<Integer>();
+		LinkedList<Integer> newLinkedlist;
+		linkList.add(33);
+		linkList.addLast(34);
+		linkList.addLast(34);
+		linkList.addLast(38);
+		linkList.addLast(40);
+		linkList.addLast(40);
+		linkList.addLast(20);
+		Node head;
+		newLinkedlist = deleteDup(linkList);
+		System.out.println(newLinkedlist);
+		System.out.println(linkList);
+		newLinkedlist = deleteDup2(linkList);
+	}
+
+}
