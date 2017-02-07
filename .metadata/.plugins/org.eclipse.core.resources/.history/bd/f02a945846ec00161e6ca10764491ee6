@@ -1,0 +1,63 @@
+package linkedListProgs;
+
+import java.util.Iterator;
+
+public class basicLinkedListOperations {
+
+	public static myNode head;
+
+	public void addNewValue(Integer value){
+		if(head == null){
+			head = new myNode(value);
+		}
+		else{
+			myNode temp = new myNode(value);
+			myNode current = head;
+
+			if(current!=null){
+				while(current.next!= null){
+					current = current.next;
+				}
+				current.next = temp;
+			}
+		}
+	
+	}
+
+	public static String toString(myNode head){
+		String result = "";
+		myNode current = head;
+		while(current!=null){
+			result += (current.data + " ");
+			current = current.next;
+		}
+		return result;
+	}
+
+
+	class myNode{
+		myNode next;
+		Integer data;
+
+		public myNode(Integer givenData){
+			data = givenData;
+			next = null;
+		}
+
+		public myNode(Integer givenData, myNode nextValue){
+			data = givenData;
+			next = nextValue;
+		}
+	}
+	public static void main(String[] args) {
+		basicLinkedListOperations list = new basicLinkedListOperations();
+		list.addNewValue(3);
+		list.addNewValue(6);
+		list.addNewValue(9);
+		list.addNewValue(3);
+		list.addNewValue(6);
+		list.addNewValue(9);
+		System.out.println(toString(head));
+	}
+
+}
