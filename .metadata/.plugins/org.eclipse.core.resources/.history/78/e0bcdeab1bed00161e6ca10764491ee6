@@ -141,7 +141,7 @@ public class basicLinkedListOperations {
 		}
 	}
 
-	public static String toString(myNode head){
+	public  String toString(myNode head){
 		String result = "";
 		myNode current = head;
 		while(current!=null){
@@ -166,14 +166,14 @@ public class basicLinkedListOperations {
 			next = nextValue;
 		}
 	}
-	public static void main(String[] args) {
+	public  void main(String[] args) {
 		basicLinkedListOperations list = new basicLinkedListOperations();
-		list.addNewValue(3);
-		list.addNewValue(6);
-		list.addNewValue(9);
-		list.addNewValue(3);
-		list.addNewValue(6);
-		list.addNewValue(9);
+		addNewValue(3);
+		addNewValue(6);
+		addNewValue(9);
+		//list.addNewValue(3);
+		//list.addNewValue(6);
+		//list.addNewValue(9);
 		System.out.println(toString(head));
 		//	list.insertAtIndex(55, 0);  //all index value starts with zero
 		//	System.out.println(toString(head));
@@ -181,7 +181,7 @@ public class basicLinkedListOperations {
 		//	System.out.println(toString(head));
 		//	list.deleteElementAtIndex(3);   //all index value starts with zero
 		//	System.out.println(toString(head));
-		list.deleteDup();
+		deleteDup();
 		System.out.println(toString(head));
 
 

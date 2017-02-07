@@ -118,7 +118,7 @@ public class basicLinkedListOperations {
 		}
 	}
 
-	public void deleteDup(){
+	public static void deleteDup(){
 		HashSet<Integer> myHashSet = new HashSet<>();
 		myNode current = head;
 		myNode previous = null;
