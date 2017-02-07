@@ -169,11 +169,11 @@ public class basicLinkedListOperations {
 	public static void main(String[] args) {
 		basicLinkedListOperations list = new basicLinkedListOperations();
 		list.addNewValue(3);
-		list.addNewValue(6);
-		list.addNewValue(9);
 		list.addNewValue(3);
-		list.addNewValue(6);
-		list.addNewValue(9);
+		list.addNewValue(3);
+		list.addNewValue(3);
+		list.addNewValue(3);
+		list.addNewValue(3);
 		System.out.println(toString(head));
 		//	list.insertAtIndex(55, 0);  //all index value starts with zero
 		//	System.out.println(toString(head));

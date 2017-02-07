@@ -127,7 +127,7 @@ public class basicLinkedListOperations {
 			return;
 		}
 		else{
-			while(current!=null){
+			while(current.next!=null){
 				if(myHashSet.contains(current.data)){
 					previous.next = current.next;
 					current = current.next;
@@ -181,9 +181,6 @@ public class basicLinkedListOperations {
 		//	System.out.println(toString(head));
 		//	list.deleteElementAtIndex(3);   //all index value starts with zero
 		//	System.out.println(toString(head));
-		list.deleteDup();
-		System.out.println(toString(head));
-
 
 	}
 

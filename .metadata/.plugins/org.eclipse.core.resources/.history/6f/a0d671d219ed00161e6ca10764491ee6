@@ -127,7 +127,7 @@ public class basicLinkedListOperations {
 			return;
 		}
 		else{
-			while(current!=null){
+			while(current.next!=null){
 				if(myHashSet.contains(current.data)){
 					previous.next = current.next;
 					current = current.next;
