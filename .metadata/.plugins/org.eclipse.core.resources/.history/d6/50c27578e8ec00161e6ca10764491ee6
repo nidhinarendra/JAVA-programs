@@ -53,26 +53,20 @@ public class basicLinkedListOperations {
 		}
 	}
 
-	public void deleteGivenElement(Integer value){ //delete all the nodes with that value.
+	public void deleteGivenElement(Integer value){
 		myNode current = head;
 		myNode previous = null;
 		if(head == null){
-			System.out.println("No elements");
 			return;
 		}
 		else{
 			while(current!=null){
 				if(current.data == value){
-					if(current.next!=null){
-						previous.next = current.next;
-						if(current == head){
-							head = current.next;
-						}
-						current = current.next;
+					previous = current.next;
+					if(current == head){
+						head = current.next;
 					}
-					else{
-						head =null;
-					}
+					current = current.next;
 				}
 				else{
 					previous = current;
@@ -83,39 +77,6 @@ public class basicLinkedListOperations {
 		}
 
 	}
-
-
-	public void deleteElementAtIndex(Integer index){
-		myNode current = head;
-		myNode previous = null;
-
-		if(head == null){
-			System.out.println("No element to delete");
-			return;
-		}
-		else if(index == 0){
-			if(current.next!=null){
-				head = current.next;
-				current = current.next;
-			}
-		}
-		else{
-			for(int i = 0; i < index; i++){
-				if(current.next!=null){
-					previous = current;
-					current = current.next;
-				}
-				else{
-					System.out.println("Index out of bound");
-					return;
-				}
-			}
-			previous.next = current.next;
-			current = current.next;
-			
-		}
-	}
-
 
 
 	public static String toString(myNode head){
@@ -154,10 +115,7 @@ public class basicLinkedListOperations {
 		System.out.println(toString(head));
 		list.insertAtIndex(55, 0);
 		System.out.println(toString(head));
-		list.deleteGivenElement(3);
-		System.out.println(toString(head));
-		list.deleteElementAtIndex(1);
-		System.out.println(toString(head));
+		delet
 
 	}
 

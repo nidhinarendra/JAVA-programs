@@ -156,7 +156,7 @@ public class basicLinkedListOperations {
 		System.out.println(toString(head));
 		list.deleteGivenElement(3);
 		System.out.println(toString(head));
-		list.deleteElementAtIndex(1);
+		list.deleteElementAtIndex(0);
 		System.out.println(toString(head));
 
 	}
