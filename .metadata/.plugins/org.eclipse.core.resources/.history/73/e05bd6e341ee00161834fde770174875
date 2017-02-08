@@ -1,0 +1,16 @@
+package linkedListProgs;
+
+public class returnKthToLast {
+
+	public static void main(String[] args) {
+		basicLinkedListOperations list = new basicLinkedListOperations();
+		list.addNewValue(4);
+		list.addNewValue(5);
+		list.addNewValue(6);
+		list.addNewValue(7);
+		list.addNewValue(8);
+		list.addNewValue(9);
+
+	}
+
+}

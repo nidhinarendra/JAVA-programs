@@ -1,0 +1,23 @@
+package linkedListProgs;
+
+import linkedListProgs.basicLinkedListOperations.myNode;
+
+public class returnKthToLast {
+	private static myNode head;
+	public static myNode returnKth(myNode head, int k){
+		
+	}
+	public static void main(String[] args) {
+		basicLinkedListOperations list = new basicLinkedListOperations();
+		list.addNewValue(4);
+		list.addNewValue(5);
+		list.addNewValue(6);
+		list.addNewValue(7);
+		list.addNewValue(8);
+		list.addNewValue(9);
+		myNode head;
+		myNode result = returnKth(head, 3);
+		
+	}
+
+}
