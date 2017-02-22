@@ -59,7 +59,7 @@ public class oneEditAway {
 
 	public static void main(String[] args) {
 		String first = "Nidhi";
-		String second = "Nidho";
+		String second = "Nidoo";
 		boolean result = isOneEdit(first, second);
 		System.out.println(result);
 

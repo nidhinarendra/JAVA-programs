@@ -7,16 +7,19 @@
  */
 public class palindromePermutation {
 
-	public static int getChar
+	public static int getCharNum(char c){
+		return 1;
+	}
 	
 	public static boolean isPP(String str){
 	int[] array = new int[26]; //Assuming the string has only alphabet and they are case insensitive (A=a)
 	for(char c : str.toCharArray()){
-		int x = getCharNum(c)
+		int x = getCharNum(c);
 	}
+	return false;
 	}
 	public static void main(String[] args) {
-		String str = "abcd";
+		String str = "aaa";
 		boolean result = isPP(str);
 		System.out.println(result);
 	

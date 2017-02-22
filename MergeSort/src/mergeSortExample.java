@@ -48,7 +48,7 @@ public class mergeSortExample {
 	}
 	public static void main(String[] args) {
 		mergeSortExample example = new mergeSortExample();
-		int[] givenArray = {22,42,12,1,5,75,47,33,15,88,44,2,53};
+		int[] givenArray = {22,42,12,1,-5,75,47,33,15,-88,44,2,53};
 		example.sort(givenArray);
 		for(int i:givenArray){
 			System.out.print(i + " ");
