@@ -40,7 +40,7 @@ public static String sortingStr(String givenStr){
 	char[] charArray = givenStr.toCharArray();
 	java.util.Arrays.sort(charArray);
 	String result = new String(charArray);
-	//System.out.println(result);
+	System.out.println(result);
 	return result;
 }
 
@@ -50,10 +50,10 @@ public static String sortingStr(String givenStr){
 		String firstSortedStr = sortingStr(firstStr);
 		String secondSortedStr = sortingStr(secondStr);
 		boolean simpleAlgoResult = firstSortedStr.equals(secondSortedStr);
-		System.out.println("The result of a quick and simple algorithm with complexity O(nlogn) is: " + simpleAlgoResult);
+		System.out.println(simpleAlgoResult);
 		
 		boolean result = isSimilar(firstStr, secondStr);
-		System.out.println("The result of a better complexity of O(n) is: "+ result);
+		System.out.println(result);
 
 	}
 
