@@ -1,10 +1,8 @@
 package binaryTree;
 
-import java.io.*;
-import java.net.*;
+
 import java.util.*;
 
-import javax.naming.SizeLimitExceededException;
 
 
 class treeNode{
@@ -78,7 +76,7 @@ class treeNode{
 		}
 	}
 
-	public static void inOrderToStore(treeNode root, Vector vector) {
+	public static void inOrderToStore(treeNode root, Vector<treeNode> vector) {
 		if (root != null) {
 			inOrderToStore(root.leftchild, vector);
 			vector.add(root);

@@ -8,21 +8,42 @@
 public class palindromePermutation {
 
 	public static int getCharNum(char c){
-		return 1;
+		int valueA = Character.getNumericValue('a');
+		int valueZ = Character.getNumericValue('z');
+		int givenValueC = Character.getNumericValue(c);
+
+		if(givenValueC >= valueA && givenValueC <= valueZ){
+			return givenValueC-valueA;
+		}
+		return -1;
 	}
-	
+
 	public static boolean isPP(String str){
-	int[] array = new int[26]; //Assuming the string has only alphabet and they are case insensitive (A=a)
-	for(char c : str.toCharArray()){
-		int x = getCharNum(c);
-	}
-	return false;
+		int[] array = new int[26];//Assuming the string has only alphabet and they are case insensitive (A=a)
+		boolean foundOdd = false;
+		for(char c : str.toCharArray()){
+			int x = getCharNum(c);
+			if(x != -1){
+				array[x]++;
+			}
+		}
+		for(int count : array){
+			if(count%2==1){
+				if(foundOdd){
+					return false;
+				}
+				else{
+					foundOdd = true;
+				}
+			}
+		}
+		return true;
 	}
 	public static void main(String[] args) {
-		String str = "aaa";
+		String str = "abcdecda";
 		boolean result = isPP(str);
 		System.out.println(result);
-	
+
 	}
 
 }

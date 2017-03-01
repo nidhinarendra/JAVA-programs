@@ -1,0 +1,36 @@
+/*
+ * Palindrome Permutation: Given a string, write a function to check 
+ * if it is a permutation of a palindrome. 
+ * A palindrome is a word or phrase that is the same forwards and backwards. 
+ * A permutation is a rearrangement of letters. 
+ * The palindrome does not need to be limited to just dictionary words.
+ */
+public class palindromePermutation {
+
+	public static int getCharNum(char c){
+		int valueA = Character.getNumericValue('a');
+		int valueZ = Character.getNumericValue('z');
+		int givenValueC = Character.getNumericValue(c);
+		
+		if(givenValueC >= valueA && givenValueC <= valueZ){
+			return givenValueC-valueA;
+		}
+		return -1;
+	}
+	
+	public static boolean isPP(String str){
+	int[] array = new int[26];//Assuming the string has only alphabet and they are case insensitive (A=a)
+
+	for(char c : str.toCharArray()){
+		int x = getCharNum(c);
+	}
+	return false;
+	}
+	public static void main(String[] args) {
+		String str = "aaa";
+		boolean result = isPP(str);
+		System.out.println(result);
+	
+	}
+
+}

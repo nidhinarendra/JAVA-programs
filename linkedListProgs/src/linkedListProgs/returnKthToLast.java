@@ -4,7 +4,7 @@
  */
 package linkedListProgs;
 
-import linkedListProgs.basicLinkedListOperations.myNode;
+
 
 public class returnKthToLast {
 	public static myNode head;

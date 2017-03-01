@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+
 
 public class quickSortExample {
 	private int[] array;

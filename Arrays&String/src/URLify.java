@@ -13,7 +13,8 @@ public class URLify {
 		int countSpace = 0;
 		for(int i= 0; i< trueLength; i++){
 			if(str[i] == ' '){
-				countSpace++; //Calculating the number of spaces in the string which needs to be replaced
+				countSpace++; 
+				//Calculating the number of spaces in the estring which needs to be replaced
 			}
 		}
 		System.out.println("The space count in the string given is: " + countSpace);
